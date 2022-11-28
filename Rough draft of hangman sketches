@@ -1,0 +1,74 @@
+Base level sketch
+   |---|
+   |
+   |
+   |
+___|___
+|     |
+|     |
+UI Response Text:
+"You have not made any incorrect guesses, you have 6 lives remaining"
+
+First Incorrect
+   |---|
+   |   O
+   |
+   |
+___|___
+|     |
+|     |
+UI Response Text:
+"Oops! That letter isn't in the word, you now have 5 lives remaining"
+
+Second Incorrect
+   |---|
+   |   O
+   |   |
+   |
+___|___
+|     |
+|     |
+UI Response Text:
+"Uh Oh! Another incorrect guess, you now have 4 lives remaining"
+
+Third Incorrect
+   |---|
+   |   O
+   |  \|
+   |
+___|___
+|     |
+|     |
+UI Response Text:
+"Whoops! This was your third incorrect guess, you now have 3 lives remaining"
+
+Fourth Incorrect
+   |---|
+   |   O
+   |  \|/
+   |
+___|___
+|     |
+|     |
+UI Response Text:
+"
+
+Fifth Incorrect
+   |---|
+   |   O
+   |  \|/
+   |  /
+___|___
+|     |
+|     |
+
+Sixth Incorrect
+   |---|
+   |   O
+   |  \|/
+   |  / \
+___|___
+|     |
+|     |
+
+
