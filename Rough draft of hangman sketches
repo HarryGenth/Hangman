@@ -1,7 +1,7 @@
 Base level sketch
-   |---|"
-   |
-   |
+print("|---|")
+print("|")
+print("|")
    |
 ___|___
 |     |
