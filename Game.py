@@ -14,6 +14,16 @@ print("Hello, Thank you for playing  Harry's Hangman game\n") # welcome outside 
 name = input("What is your name?: ")
 print("Hi", name, "Good luck\n")
 
+hangman_parts = ["""
+    +---+
+        |
+        |
+        |
+       ===""","""
+    +---+
+    O   |
+        |"""]
+
 def path():
     option = input("Choose a theme: (1)English Dictionary, (2) MLB Teams (3)US Presidents, (4)Mammals, (5)Fast Food Restaurants, (6)Moods, (7)Shoe Brands. Type 1, 2, 3, 4, 5, 6, or 7")
     if option == "1":
@@ -39,23 +49,13 @@ def path():
         list = Shoes
     else:
         print("invalid input, please type either 1, 2, 3, 4, 5, 6, or 7 based on what theme you'd like to choose")
-        return path()
+        return path
     word = random.choice(list)
-    print(word)
     return hang
-
-def start_q():
-        play = input("Would you like to play another time?, yes = yes no = no")
-        if play == "yes":
-            return path()
-        elif play == "no":
-            print("Thank you very much for playing")
-        else:
-            print("Invalid input, please type yes or no if you'd like to play again")
-            return start_q()
 
 def hang():
     numb = 0
+    word = random.choice(list)
     length = len(word)
     ill = "_" * length
     prev_guess = []
@@ -98,6 +98,47 @@ def hang():
             return start_q()
     elif numb != lim:
             hang()
+
+def path():
+    option = input("Choose a theme: (1)English Dictionary, (2) MLB Teams (3)US Presidents, (4)Mammals, (5)Fast Food Restaurants, (6)Moods, (7)Shoe Brands. Type 1, 2, 3, 4, 5, 6, or 7")
+    if option == "1":
+        print("You've selected English Dictionary. Note that each answer is only one word and all lowercase")
+        list = Dict
+    elif option == "2":
+        print("Youv'e selected MLB Teams. Note that each answer is simply the mascot name (orioles, yankees, redsox), are one word and all lowercase")
+        list = MLB
+    elif option == "3":
+        print("You've selected US Presidents. Note that each answer is only the presidents last name (vanburen, bush, mckinley), and all letters are lowercase.")
+        list = Pres
+    elif option == "4":
+        print("You've selected Mammals. Note that each answer is only one word and all letters are lowercase (bear, donkey, horse)")
+        list = Mam
+    elif option == "5":
+        print("You've selected Fast Food restaurants. Note that each answer is only one word and all lowercase (kfc, tacobell, mcdonalds, chickfila)")
+        list = FF
+    elif option == "6":
+        print("You've selected Moods. Note that each mood is one word with all lowercase letters (happy, sad)")
+        list = Moods
+    elif option == "7":
+        print("You've selected Shoes. Note that each answer is one word and only has lowercase letter (underarmour, nike, adidas)")
+        list = Shoes
+    else:
+        print("invalid input, please type either 1, 2, 3, 4, 5, 6, or 7 based on what theme you'd like to choose")
+        return path
+    word = random.choice(list)
+    return hang
+
+def start_q():
+        play = input("Would you like to play another time?, yes = yes no = no")
+        if play == "yes":
+            return path()
+        elif play == "no":
+            print("Thank you very much for playing")
+        else:
+            print("Invalid input, please type yes or no if you'd like to play again")
+            return start_q()
+
+
 
 #path is the UI used to select the theme and give basic instructions regarding the game
 
